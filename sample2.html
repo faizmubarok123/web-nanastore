@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai HUHAA - Jajanan Pedas & Frozen Food</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f9f9f9; color: #333; line-height: 1.6; }
+
+        /* Colors */
+        :root {
+            --primary: #e63946; /* Merah Cabe */
+            --secondary: #ffb703; /* Kuning Kunyit */
+            --dark: #1d3557;
+            --light: #f1faee;
+        }
+
+        /* Header & Navigation */
+        header {
+           background-color: rgba(255 255 255 0.8);
+           backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo img { height: 60px; } /* Pastikan file logo bernama logo.png */
+
+        nav a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 600; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://res.cloudinary.com/dgpwaty6m/image/upload/f_auto,q_auto,c_fill,g_auto,w_1350,h_900/mie_huha_hd_wdoigv');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--secondary); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--secondary); color: var(--dark); }
+
+        /* Menu Section */
+        .container { padding: 4rem 5%; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 3rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; width: 50%; height: 4px; background: var(--secondary); position: absolute; bottom: -10px; left: 25%; }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .menu-card:hover { transform: translateY(-10px); }
+        .menu-card img { width: 100%; height: 200px; object-fit: cover; }
+        .menu-info { padding: 1.5rem; }
+        .menu-info h3 { margin-bottom: 0.5rem; color: var(--primary); }
+        .price { font-weight: bold; color: #27ae60; font-size: 1.1rem; }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 3rem 5%; text-align: center; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Sederhana untuk mobile */
+        }
+    </style>
+</head>
+<body>
+<html style="scroll-behavior: smooth;"></html>
+    <header>
+        <div class="logo">
+            <img src="poster_nanastore-removebg-preview.png" alt="Logo Kedai HUHAA">
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#frozen">Frozen Food</a>
+            <a href="https://wa.me/6285693808423">Pesan Sekarang</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Sensasi Pedas HUHAA!</h1>
+        <p>Nikmati perpaduan Seblak, Mie Jebew, dan aneka jajanan kekinian dengan bumbu rempah asli yang bikin ketagihan.</p>
+        <a href="#menu" class="btn">Lihat Menu Kami</a>
+    </section>
+
+    <section class="container" id="menu">
+        <h2 class="section-title">Menu Favorit</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="seblak.png" alt="Seblak">
+                <div class="menu-info">
+                    <h3>Seblak Prasmanan</h3>
+                    <p>Kerupuk, tulang, ceker, dan bakso dengan kuah kencur pedas.</p>
+                    <p class="price">Star From Rp 1.000</p>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="mieHUHAA.png" alt="Mie Jebew">
+                <div class="menu-info">
+                    <h3>Mie huhaa/HUHAA (Jebew)</h3>
+                    <p>Mie pedas chili oil dengan topping pangsit dan bakso.</p>
+                    <p class="price">Rp 5.000 / 10.000</p>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="baksoaci.png" alt="Bakso Aci">
+                <div class="menu-info">
+                    <h3>Bakso Aci</h3>
+                    <p>Bakso aci isi lemak, cuankie, dan pilus cikur.</p>
+                    <p class="price">Rp 5.000</p>
+                </div>
+            </div>
+
+             <div class="menu-card">
+                <img src="kebab.png" alt="Kebab Sosis">
+                <div class="menu-info">
+                    <h3>Kebab Sosis</h3>
+                    <p>Kebab sosis dengan sosis sederhana yg sangat cocok untuk dibuat ngemil.</p>
+                    <p class="price">Rp 5.000</p>
+                </div>
+            </div>
+
+             <div class="menu-card">
+                <img src="martabak_telur.png" alt="Martabak Telur">
+                <div class="menu-info">
+                    <h3>Martabak Telur</h3>
+                    <p>Martabak telur yg dibuat dengan perpaduan rasa yg sangat special.</p>
+                    <p class="price">Rp 1.000</p>
+                </div>
+            </div>
+
+             <div class="menu-card">
+                <img src="frozenfood.png" alt="Frozen Food">
+                <div class="menu-info">
+                    <h3>Frozen Food</h3>
+                    <p>Tinggal goreng, siap santap 😋
+Tersedia: bakso, nugget, dimsum, sosis, tempura, dan lainnya.</p>
+                    <p class="price">Start From Rp 1.000</p>
+                </div>
+            </div>
+
+               <div class="menu-card">
+                <img src="pisangcrispy.png" alt="Pisang Crispy">
+                <div class="menu-info">
+                    <h3>Pisang Crispy</h3>
+                    <p>Pisang goreng tepung renyah dengan rasa yg sangat crunchy.</p>
+                    <p class="price">Rp 2.000</p>
+                </div>
+            </div>
+
+               <div class="menu-card">
+                <img src="roti_bakar.png" alt="Roti Bakar">
+                <div class="menu-info">
+                    <h3>Roti Bakar</h3>
+                    <p>Roti bakar hangat dengan tekstur lembut dan isian melimpah 🍞✨
+                     Perpaduan rasa manis dan gurih yang sempurna di setiap gigitan.</p>
+                    <p class="price">Rp 2.000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="frozen" style="background:#fff;">
+        <h2 class="section-title">Frozen Food</h2>
+        <p>Mau masak sendiri di rumah? Kami menyediakan versi praktis!</p>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-info">
+                    <h3>Paket Frozen Seblak</h3>
+                    <p class="price">Rp 12.000</p>
+                    <a href="https://wa.me/6285693808423" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Beli Stok</a>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-info">
+                    <h3>Paket Frozen Baso Aci</h3>
+                    <p class="price">Rp 10.000</p>
+                    <a href="https://wa.me/6285693808423" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Beli Stok</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kedai Nana Store - Jagonya Jajanan Pedas.</p>
+        <p>📍Jl. Sukamantri, Cikembar Sukabumi</p>
+    </footer>
+
+   <a href="https://wa.me/6285693808423?text=Halo%20Admin,%20saya%20mau%20order%20jajanannya" 
+   class="whatsapp-float" target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>        
+</body>
+</html>
